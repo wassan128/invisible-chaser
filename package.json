@@ -1,0 +1,15 @@
+{
+  "name": "nagashi-commen",
+  "version": "1.0.0",
+  "description": "コメントが流れていきます",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "wassan128",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "electron-packager": "^11.1.0",
+    "electron-prebuilt": "^1.4.13"
+  }
+}
