@@ -1,0 +1,26 @@
+{
+  "name": "invisible-chaser",
+  "version": "0.1.0",
+  "description": "コメントが流れていきます",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wassan128/invisible-chaser.git"
+  },
+  "keywords": [
+    "twitter"
+  ],
+  "author": "wassan128",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wassan128/invisible-chaser/issues"
+  },
+  "homepage": "https://github.com/wassan128/invisible-chaser#readme",
+  "devDependencies": {
+    "electron": "^2.0.3"
+  }
+}
