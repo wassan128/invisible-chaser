@@ -1,7 +1,25 @@
 * {
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 body {
-	background: rgba(255, 255, 255, 0.5);
 }
+div {
+}
+	.tweets {
+		position: absolute;
+		color: #fff;
+		font-size: 20pt;
+		font-family: "Rounded M+ 1p heavy";
+		white-space: nowrap;
+		animation-duration: 15s;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+		-webkit-text-stroke: 1px #000;
+		text-shadow: 1px 1px 0 #000,
+		             -1px 1px 0 #000,
+					 1px -1px 0 #000,
+					 -1px -1px 0 #000;
+	}
+

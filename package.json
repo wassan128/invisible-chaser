@@ -21,6 +21,13 @@
   },
   "homepage": "https://github.com/wassan128/invisible-chaser#readme",
   "devDependencies": {
+    "dotenv": "^6.0.0",
     "electron": "^2.0.3"
+  },
+  "dependencies": {
+    "ipc": "0.0.1",
+    "nicojs": "^1.1.8",
+    "screen": "^0.2.10",
+    "twitter": "^1.7.1"
   }
 }
