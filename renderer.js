@@ -41,8 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	prepare_lane_anim(N_LANE, 1280);
 	ipcRenderer.on("new_tweet", (e, data) => {
 		const lane_no = LANES.indexOf(true);
-		LANES[lane_no] = false;
-		lets_swim(`${data.text} (@${data.name})`, lane_no);
+		if (lane_no !== -1) {
+			LANES[lane_no] = false;
+			lets_swim(`${data.text} (${data.name}(@${data.id}))`, lane_no);
+		}
 	});
 });
 

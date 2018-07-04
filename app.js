@@ -35,9 +35,10 @@ const create_win = () => {
 	});
 	tw.stream("user", (stream) => {
 		stream.on("data", (data) => {
-			const name = data.user.screen_name;
+			const id = data.user.screen_name;
+			const name = data.user.name;
 			const text = data.text.replace("\n", " ");
-			win.webContents.send("new_tweet", {"name": name, "text": text});
+			win.webContents.send("new_tweet", {"id": id, "name": name, "text": text});
 		});
 		stream.on("error", (error) => {
 			console.log(`error: ${util.inspect(error)}`);
