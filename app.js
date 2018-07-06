@@ -2,23 +2,30 @@
 
 require("dotenv").config();
 const electron = require("electron");
-const {app, BrowserWindow, ipcMain} = electron;
+const {app, BrowserWindow, ipcMain, Tray, Menu} = electron;
 const twitter = require("twitter");
 const util = require("util");
 
 let win = null;
+let tray = null;
+
+const create_tray = () => {
+	tray = new Tray(`${__dirname}/icon.png`);
+	const context_menu = Menu.buildFromTemplate([
+		{label: "終了", click: () => win.close()}
+	]);
+	tray.setContextMenu(context_menu);
+};
 
 const create_win = () => {
-	const screen = electron.screen;
-	const size = screen.getPrimaryDisplay().size;
 	win = new BrowserWindow({
-		"top": 0,
-		"left": 0,
-		"width": size.width,
-		"height": size.height,
-		"frame": false,
-		"transparent": true,
-		"alwaysOnTop": true,
+		top: 0,
+		left: 0,
+		width: 0,
+		height: 0,
+		frame: false,
+		transparent: true,
+		alwaysOnTop: true
 	});
 	win.maximize();
 	win.setIgnoreMouseEvents(true);
@@ -27,6 +34,8 @@ const create_win = () => {
 		win = null;
 	});
 
+	create_tray();
+	
 	const tw = new twitter({
 		consumer_key: process.env.CONSUMER_KEY,
 		consumer_secret: process.env.CONSUMER_SECRET,

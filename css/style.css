@@ -4,8 +4,11 @@
 	overflow: hidden;
 }
 body {
+	-webkit-user-select: none;
+	background: rgba(0, 0, 0, 0);
 }
 div {
+	-webkit-app-region: drag;
 }
 	.tweets {
 		position: absolute;
@@ -22,4 +25,3 @@ div {
 					 1px -1px 0 #000,
 					 -1px -1px 0 #000;
 	}
-
